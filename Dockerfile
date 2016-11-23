@@ -1,5 +1,7 @@
 FROM alpine:3.4
 
+MAINTAINER hg8496@cstolz.de
+
 RUN apk add --no-cache python ca-certificates openssh-client
 RUN apk add --no-cache --virtual build-dependencies python-dev py-pip gcc musl-dev libffi-dev openssl-dev \
  && pip install --upgrade pip \
