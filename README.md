@@ -10,7 +10,7 @@
 #### Direct call with mapped volumes
 To map the ssh-agent into docker do:
 
-`docker run --rm -ti  -v $SSH_AUTH_SOCK:/auth_sock -e SSH_AUTH_SOCK=/auth_sock -v /ansible/infrastructure:/etc/ansible hg8496/ansible ansible -u USER all -m ping`
+`docker run --rm -ti  -v $SSH_AUTH_SOCK:/auth_sock -e SSH_AUTH_SOCK=/auth_sock -v /ansible/infrastructure:/infra hg8496/ansible ansible -u USER all -m ping`
 
 #### Create own image
 With all your ansible infrastructure under `./infra` write the following Dockerfile
@@ -18,7 +18,7 @@ With all your ansible infrastructure under `./infra` write the following Dockerf
 ```dockerfile
 FROM hg8496/ansible
 
-ADD infra /etc/ansible
+COPY infra /infra
 ```
 then `docker build --force-rm -t ansible .` to build your image.
 

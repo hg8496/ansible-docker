@@ -7,4 +7,4 @@ RUN apk add --no-cache --virtual build-dependencies python-dev py-pip gcc musl-d
  && apk del build-dependencies \
  && rm -r ~/.cache/pip
 
-WORKDIR /etc/ansible
+WORKDIR /infra
