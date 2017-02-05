@@ -6,3 +6,5 @@ RUN apk add --no-cache --virtual build-dependencies python-dev py-pip gcc musl-d
  && pip install ansible \
  && apk del build-dependencies \
  && rm -r ~/.cache/pip
+
+WORKDIR /etc/ansible
