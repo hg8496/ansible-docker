@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:latest
 
 RUN apk add --no-cache python ca-certificates openssh-client sshpass
 RUN apk add --no-cache --virtual build-dependencies python-dev py-pip gcc musl-dev libffi-dev openssl-dev \
